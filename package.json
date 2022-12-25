@@ -26,7 +26,7 @@
         "dev": "pnpm build --watch",
         "lint": "eslint . --fix",
         "prepublishOnly": "pnpm build",
-        "release": "bumpp && npm publish"
+        "release": "bumpp && pnpm publish"
     },
     "peerDependencies": {
         "vite": "^2.9.0 || ^3.0.0 || ^4.0.0"

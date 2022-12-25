@@ -43,6 +43,16 @@ export default {
 
 After the build, file will be created in the root build directory under specified file name (`meta.json` by default)
 
+Exaple of the created file:
+
+```json
+{
+  "buildHash": "GENERATED_BUILD_HASH",
+  "commitHash": "LAST_COMMIT_HASH",
+  "date": "BUILD_DATE"
+}
+```
+
 ## Motivation
 
 Find out if deployed version of a frontend is relevant,

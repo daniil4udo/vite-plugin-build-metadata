@@ -23,7 +23,7 @@
 Install
 
 ```bash
-npm i vite-plugin-build-metadata -D # yarn add vite-plugin-build-metadata -D
+pnpm i vite-plugin-build-metadata -D
 ```
 
 Add it to `vite.config.js`

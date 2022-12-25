@@ -22,17 +22,14 @@
         "dist"
     ],
     "scripts": {
-        "build": "tsup src/index.ts --dts --format cjs,esm",
-        "dev": "nr build --watch",
-        "lint": "eslint .",
-        "prepublishOnly": "nr build",
+        "build": "tsup",
+        "dev": "pnpm build --watch",
+        "lint": "eslint . --fix",
+        "prepublishOnly": "pnpm build",
         "release": "bumpp && npm publish"
     },
     "peerDependencies": {
         "vite": "^2.9.0 || ^3.0.0 || ^4.0.0"
-    },
-    "dependencies": {
-        "micromatch": "^4.0.5"
     },
     "devDependencies": {
         "@democrance/eslint-config": "^0.4.1",

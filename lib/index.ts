@@ -13,7 +13,7 @@ interface Options {
     fileName?: string;
 }
 
-function VitePluginBuildMetadata(options: Options = {}): Plugin {
+export default function VitePluginBuildMetadata(options: Options = {}): Plugin {
     const {
         fileName = 'meta',
     } = options
@@ -48,5 +48,3 @@ function VitePluginBuildMetadata(options: Options = {}): Plugin {
         },
     }
 }
-
-export default VitePluginBuildMetadata

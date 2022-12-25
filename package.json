@@ -2,7 +2,7 @@
     "name": "vite-plugin-build-metadata",
     "version": "0.1.0",
     "packageManager": "pnpm@7.19.0",
-    "description": "Create meta file after the Vite build",
+    "description": "Create Vite build meta",
     "author": "daniil4udo <daniil4udo@gmail.com>",
     "license": "MIT",
     "funding": "https://github.com/sponsors/daniil4udo",

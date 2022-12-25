@@ -1,6 +1,6 @@
 <h2 align='center'><samp>vite-plugin-build-metadata</samp></h2>
 
-<p align='center'>Create meta file after the Vite build</p>
+<p align='center'>Create Vite build meta</p>
 
 <p align='center'>
 <a href='https://www.npmjs.com/package/vite-plugin-build-metadata'>

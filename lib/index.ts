@@ -13,18 +13,27 @@ interface Options {
     fileName?: string;
 }
 
+// https://github.com/vitejs/vite/blob/632fedf87fbcb81b2400571886faf8a8b92376e4/packages/vite/src/node/utils.ts#L900
+function getHash(text: Buffer | string): string {
+    return createHash('sha256')
+        .update(text)
+        .digest('hex')
+        .substring(0, 8)
+}
+
+function getGitHash() {
+    try {
+        return childProcess.execSync('git rev-parse --short HEAD').toString().replace('\n', '')
+    }
+    catch {
+        return null
+    }
+}
+
 export default function VitePluginBuildMetadata(options: Options = {}): Plugin {
     const {
         fileName = 'meta',
     } = options
-
-    // https://github.com/vitejs/vite/blob/632fedf87fbcb81b2400571886faf8a8b92376e4/packages/vite/src/node/utils.ts#L900
-    function getHash(text: Buffer | string): string {
-        return createHash('sha256')
-            .update(text)
-            .digest('hex')
-            .substring(0, 8)
-    }
 
     let config: ResolvedConfig
 
@@ -40,7 +49,7 @@ export default function VitePluginBuildMetadata(options: Options = {}): Plugin {
             // save metadata as file
             await writeFile(`${options.dir}/${fileName}.json`, JSON.stringify({
                 buildHash: getHash(JSON.stringify(bundle)),
-                commitHash: childProcess.execSync('git rev-parse --short HEAD').toString().replace('\n', ''),
+                commitHash: getGitHash(),
                 date: new Date(),
             }))
 

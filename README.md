@@ -10,40 +10,42 @@
 
 <br>
 
+## 💙 SPECIAL SPONSOR
+
+<!--special start-->
+
 <p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/daniil4udo/static/sponsors.svg">
-    <img src='https://cdn.jsdelivr.net/gh/daniil4udo/static/sponsors.svg'/>
+  <a href="https://www.democrance.com" target="_blank">
+    <img width="260px" src="https://www.democrance.com/wp-content/uploads/2021/11/democrance_new_logo_1200dpi.png">
   </a>
 </p>
 
-<br>
-
 ## Usage
 
-Install
+### Installation
+
+Install the vite-plugin-build-metadata package as a development dependency using pnpm:
 
 ```bash
 pnpm i vite-plugin-build-metadata -D
 ```
 
-Add it to `vite.config.js`
+## Configuration
+
+Add the plugin to your `vite.config.js` file:
 
 ```ts
 // vite.config.js
-import VitePluginBuildMetadata from 'vite-plugin-build-metadata'
+import VitePluginBuildMetadata from 'vite-plugin-build-metadata';
 
 export default {
-    plugins: [
-        VitePluginBuildMetadata({
-            fileName: 'build-meta.json',
-        }),
-    ],
-}
+  plugins: [
+    VitePluginBuildMetadata(),
+  ],
+};
 ```
 
-After the build, file will be created in the root build directory under specified file name (`meta.json` by default)
-
-Exaple of the created file:
+Once the plugin is installed and configured, it will generate a file in the root build directory (default filename: meta.json) after each build. This file will contain the following information:
 
 ```json
 {
@@ -53,9 +55,30 @@ Exaple of the created file:
 }
 ```
 
+You can customize the filename by passing an options object to the VitePluginBuildMetadata constructor:
+
+```ts
+// vite.config.js
+import VitePluginBuildMetadata from 'vite-plugin-build-metadata';
+
+export default {
+  plugins: [
+    VitePluginBuildMetadata({ filename: 'custom-meta.json' }), // or without .json extension
+  ],
+};
+```
+
 ## Motivation
 
-Find out if deployed version of a frontend is relevant,
+The `vite-plugin-build-metadata` plugin provides a way to determine the relevance of the deployed version of a frontend application. By including build and commit hashes, as well as the build date, in the generated metadata file, you can easily track and verify the version of your application in production.
+
+This information can be useful in various scenarios, such as:
+
+- Ensuring that the correct version of the application is deployed in production environments.
+- Debugging issues by identifying the specific build and commit associated with a deployed version.
+- Comparing different builds to track changes and assess their impact.
+
+Including build metadata in your frontend builds adds an extra layer of transparency and accountability to your development process.
 
 ## License
 

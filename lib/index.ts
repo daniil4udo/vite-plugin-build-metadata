@@ -47,7 +47,9 @@ export default function VitePluginBuildMetadata(options: Options = {}): Plugin {
         },
         writeBundle: async (options, bundle) => {
             // save metadata as file
-            await writeFile(`${options.dir}/${fileName}.json`, JSON.stringify({
+            const metaFilename = `${options.dir}/${fileName.replace(/\.[^/.]+$/, '')}.json`;
+
+            await writeFile(metaFilename, JSON.stringify({
                 buildHash: getHash(JSON.stringify(bundle)),
                 commitHash: getGitHash(),
                 date: new Date(),

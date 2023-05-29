@@ -28,14 +28,13 @@
         "release": "bumpp && pnpm publish"
     },
     "devDependencies": {
-        "@democrance/eslint-config": "^0.5.1",
-        "@types/node": "^18.16.3",
+        "@democrance/eslint-config": "^0.7.0",
+        "@types/node": "^18.16.16",
         "bumpp": "^9.1.0",
-        "eslint": "^8.39.0",
-        "rollup": "^3.21.3",
+        "eslint": "^8.41.0",
         "tsup": "^6.7.0",
         "typescript": "^5.0.4",
-        "vite": "^4.3.4"
+        "vite": "^4.3.9"
     },
     "peerDependencies": {
         "vite": "^2.9.0 || ^3.0.0 || ^4.0.0"

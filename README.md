@@ -16,7 +16,7 @@
 
 <p align="center">
   <a href="https://www.democrance.com" target="_blank">
-    <img width="260px" src="https://www.democrance.com/wp-content/uploads/2021/11/democrance_new_logo_1200dpi.png">
+    <img width="260px" src="https://www.democrance.com/wp-content/uploads/2023/02/democrance-logo.svg">
   </a>
 </p>
 

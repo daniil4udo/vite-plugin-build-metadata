@@ -14,19 +14,19 @@ interface Options {
 }
 
 // https://github.com/vitejs/vite/blob/632fedf87fbcb81b2400571886faf8a8b92376e4/packages/vite/src/node/utils.ts#L900
-function getHash(text: Buffer | string): string {
+export function getHash(text: globalThis.Buffer | string): string {
     return createHash('sha256')
         .update(text)
         .digest('hex')
-        .substring(0, 8)
+        .substring(0, 8);
 }
 
-function getGitHash() {
+export function getGitHash() {
     try {
-        return childProcess.execSync('git rev-parse --short HEAD').toString().replace('\n', '')
+        return childProcess.execSync('git rev-parse --short HEAD').toString().replace('\n', '');
     }
     catch {
-        return null
+        return null;
     }
 }
 

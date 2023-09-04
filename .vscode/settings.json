@@ -1,3 +1,15 @@
 {
-  "typescript.tsdk": "node_modules/typescript/lib"
+    "prettier.enable": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "files.associations": {
+        "*.css": "postcss"
+    },
+    "editor.formatOnSave": false,
+    "i18n-ally.localesPaths": [
+        "src/locales/messages.json",
+        "src/locales/modules"
+    ],
+    "typescript.tsdk": "node_modules/typescript/lib"
 }

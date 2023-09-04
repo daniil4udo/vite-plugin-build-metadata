@@ -1,16 +1,16 @@
-import type { Plugin, ResolvedConfig } from 'vite'
+import type { Plugin, ResolvedConfig } from 'vite';
 
-import childProcess from 'node:child_process'
-import { createHash } from 'node:crypto'
-import { writeFile } from 'node:fs/promises'
+import childProcess from 'node:child_process';
+import { createHash } from 'node:crypto';
+import { writeFile } from 'node:fs/promises';
 
 interface Options {
     /**
-   * Name of the file where to write
-   *
-   * @default 'meta'
-   */
-    fileName?: string;
+    * Name of the file where to write
+    *
+    * @default 'meta'
+    */
+    fileName?: string
 }
 
 // https://github.com/vitejs/vite/blob/632fedf87fbcb81b2400571886faf8a8b92376e4/packages/vite/src/node/utils.ts#L900
@@ -33,9 +33,9 @@ export function getGitHash() {
 export default function VitePluginBuildMetadata(options: Options = {}): Plugin {
     const {
         fileName = 'meta',
-    } = options
+    } = options;
 
-    let config: ResolvedConfig
+    let config: ResolvedConfig;
 
     return {
         // this name will show up in warnings and errors
@@ -43,7 +43,7 @@ export default function VitePluginBuildMetadata(options: Options = {}): Plugin {
         apply: 'build',
         enforce: 'post',
         configResolved(resolvedConfig) {
-            config = resolvedConfig
+            config = resolvedConfig;
         },
         writeBundle: async (options, bundle) => {
             // save metadata as file
@@ -53,9 +53,9 @@ export default function VitePluginBuildMetadata(options: Options = {}): Plugin {
                 buildHash: getHash(JSON.stringify(bundle)),
                 commitHash: getGitHash(),
                 date: new Date(),
-            }))
+            }));
 
-            config.logger.info(`\n✨ [vite-plugin-build-metadata] - Hash has been created in ${fileName}.json\n`)
+            config.logger.info(`\n✨ [vite-plugin-build-metadata] - Hash has been created in ${fileName}.json\n`);
         },
-    }
+    };
 }

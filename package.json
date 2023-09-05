@@ -22,6 +22,7 @@
     ],
     "scripts": {
         "build": "tsup",
+        "postbuild": "vite-node scripts/postbuild.ts",
         "dev": "pnpm build --watch",
         "lint": "eslint . --color --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
         "prepublishOnly": "pnpm build",
@@ -29,15 +30,22 @@
     },
     "devDependencies": {
         "@democrance/eslint-config": "^0.10.0",
+        "@democrance/utils": "^0.18.2",
         "@types/node": "^18.17.14",
         "bumpp": "^9.2.0",
         "eslint": "^8.48.0",
         "tsup": "^7.2.0",
         "typescript": "^5.2.2",
-        "vite": "^4.4.9"
+        "vitest": "^0.34.3"
     },
     "peerDependencies": {
         "vite": "^3.0.0 || ^4.0.0 || ^5.0.0"
     },
-    "packageManager": "pnpm@8.7.0"
+    "packageManager": "pnpm@8.7.0",
+    "pnpm": {
+        "overrides": {
+            "file-saver": "npm:file-saver-es@^2.0.5",
+            "vite": "^5.0.0-beta.0"
+        }
+    }
 }

@@ -23,13 +23,17 @@ export default function VitePluginBuildMetaData(opts: PluginOptions = {}): Plugi
         },
         writeBundle: async (options, bundle) => {
             // save metadata as file
-            const metaFilename = `${options.dir}/${fileName.replace(/\.[^/.]+$/, '')}.json`;
-
-            await writeFile(metaFilename, JSON.stringify({
+            const metaFilename = `${options.dir}/${parse(fileName).name}.json`;
+            const metaData: MetaData = {
                 buildHash: getHash(JSON.stringify(bundle)),
                 commitHash: getGitHash(),
-                date: new Date(),
-            }));
+                date: new Date().toJSON(),
+            };
+
+            await writeFile(
+                metaFilename,
+                JSON.stringify(metaData, null, 2),
+            );
 
             config.logger.info(`\n✨ [vite-plugin-build-metadata] - Hash has been created in ${fileName}.json\n`);
         },

@@ -14,9 +14,21 @@
     "funding": "https://github.com/sponsors/daniil4udo",
     "license": "MIT",
     "author": "daniil4udo <daniil4udo@gmail.com>",
-    "main": "dist/index.js",
+    "main": "dist/index.mjs",
     "module": "dist/index.mjs",
     "types": "dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.js"
+        },
+        "./*": {
+            "types": "./dist/*.d.ts",
+            "import": "./dist/*.mjs",
+            "require": "./dist/*.js"
+        }
+    },
     "files": [
         "dist"
     ],

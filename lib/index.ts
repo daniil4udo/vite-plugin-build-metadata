@@ -1,34 +1,10 @@
+import type { MetaData, PluginOptions } from './types';
 import type { Plugin, ResolvedConfig } from 'vite';
 
-import childProcess from 'node:child_process';
-import { createHash } from 'node:crypto';
 import { writeFile } from 'node:fs/promises';
+import { parse } from 'node:path/posix';
 
-interface Options {
-    /**
-    * Name of the file where to write
-    *
-    * @default 'meta'
-    */
-    fileName?: string
-}
-
-// https://github.com/vitejs/vite/blob/632fedf87fbcb81b2400571886faf8a8b92376e4/packages/vite/src/node/utils.ts#L900
-export function getHash(text: globalThis.Buffer | string): string {
-    return createHash('sha256')
-        .update(text)
-        .digest('hex')
-        .substring(0, 8);
-}
-
-export function getGitHash() {
-    try {
-        return childProcess.execSync('git rev-parse --short HEAD').toString().replace('\n', '');
-    }
-    catch {
-        return null;
-    }
-}
+import { getGitHash, getHash } from './utils';
 
 export default function VitePluginBuildMetadata(options: Options = {}): Plugin {
     const {

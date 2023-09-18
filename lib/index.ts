@@ -6,10 +6,10 @@ import { parse } from 'node:path/posix';
 
 import { getGitHash, getHash } from './utils';
 
-export default function VitePluginBuildMetadata(options: Options = {}): Plugin {
+export default function VitePluginBuildMetaData(opts: PluginOptions = {}): Plugin {
     const {
         fileName = 'meta',
-    } = options;
+    } = opts;
 
     let config: ResolvedConfig;
 
@@ -35,3 +35,5 @@ export default function VitePluginBuildMetadata(options: Options = {}): Plugin {
         },
     };
 }
+
+export { VitePluginBuildMetaData, getGitHash, getHash };

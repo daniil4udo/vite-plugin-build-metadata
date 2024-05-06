@@ -7,7 +7,7 @@
     "serve": "vite preview"
   },
   "devDependencies": {
-    "vite": "^4.0.1",
+    "vite": "^4.5.3",
     "vite-plugin-build-metadata": "workspace:*"
   }
 }

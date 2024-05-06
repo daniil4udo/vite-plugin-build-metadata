@@ -34,7 +34,6 @@
     ],
     "scripts": {
         "build": "tsup",
-        "postbuild": "vite-node scripts/postbuild.ts",
         "dev": "pnpm build --watch",
         "lint": "eslint . --color --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
         "prepublishOnly": "pnpm build",

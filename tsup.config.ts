@@ -9,4 +9,5 @@ export default defineConfig({
     skipNodeModulesBundle: true,
     splitting: true,
     target: 'es2020',
+    cjsInterop: true,
 });

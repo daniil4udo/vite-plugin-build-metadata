@@ -63,7 +63,7 @@ import VitePluginBuildMetadata from 'vite-plugin-build-metadata';
 
 export default {
   plugins: [
-    VitePluginBuildMetadata({ filename: 'custom-meta.json' }), // or without .json extension
+    VitePluginBuildMetadata({ fileName: 'custom-meta.json' }), // or without .json extension
   ],
 };
 ```

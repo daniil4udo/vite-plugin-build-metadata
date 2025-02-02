@@ -1,6 +1,6 @@
 {
     "name": "vite-plugin-build-metadata",
-    "version": "0.5.0",
+    "version": "1.0.0",
     "type": "module",
     "description": "Create Vite build meta",
     "author": "daniil4udo <daniil4udo@gmail.com>",

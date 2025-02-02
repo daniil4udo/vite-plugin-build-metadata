@@ -1,13 +1,13 @@
 {
-  "name": "vanila",
-  "version": "0.0.0",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
-  },
-  "devDependencies": {
-    "vite": "^4.5.3",
-    "vite-plugin-build-metadata": "workspace:*"
-  }
+    "name": "vanila",
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "serve": "vite preview"
+    },
+    "devDependencies": {
+        "vite": "^4.5.3",
+        "vite-plugin-build-metadata": "workspace:*"
+    }
 }

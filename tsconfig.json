@@ -1,17 +1,17 @@
 {
-  "compilerOptions": {
-    "module": "esnext",
-    "target": "esnext",
-    "lib": ["esnext", "DOM"],
-    "esModuleInterop": true,
-    "strict": true,
-    "strictNullChecks": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "skipLibCheck": true
-  },
-  "exclude": [
-    "**/dist",
-    "**/node_modules"
-  ]
+    "compilerOptions": {
+        "target": "esnext",
+        "lib": ["esnext", "DOM"],
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true
+    },
+    "exclude": [
+        "**/dist",
+        "**/node_modules"
+    ]
 }

@@ -40,4 +40,4 @@ export default function VitePluginBuildMetaData(opts: PluginOptions = {}): Plugi
     };
 }
 
-export { VitePluginBuildMetaData, getGitHash, getHash };
+export { getGitHash, getHash, VitePluginBuildMetaData };

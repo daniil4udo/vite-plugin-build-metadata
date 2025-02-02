@@ -39,9 +39,9 @@ Add the plugin to your `vite.config.js` file:
 import VitePluginBuildMetadata from 'vite-plugin-build-metadata';
 
 export default {
-  plugins: [
-    VitePluginBuildMetadata(),
-  ],
+    plugins: [
+        VitePluginBuildMetadata(),
+    ],
 };
 ```
 
@@ -49,9 +49,9 @@ Once the plugin is installed and configured, it will generate a file in the root
 
 ```json
 {
-  "buildHash": "GENERATED_BUILD_HASH",
-  "commitHash": "LAST_COMMIT_HASH",
-  "date": "BUILD_DATE"
+    "buildHash": "GENERATED_BUILD_HASH",
+    "commitHash": "LAST_COMMIT_HASH",
+    "date": "BUILD_DATE"
 }
 ```
 
@@ -62,9 +62,9 @@ You can customize the filename by passing an options object to the VitePluginBui
 import VitePluginBuildMetadata from 'vite-plugin-build-metadata';
 
 export default {
-  plugins: [
-    VitePluginBuildMetadata({ filename: 'custom-meta.json' }), // or without .json extension
-  ],
+    plugins: [
+        VitePluginBuildMetadata({ filename: 'custom-meta.json' }), // or without .json extension
+    ],
 };
 ```
 

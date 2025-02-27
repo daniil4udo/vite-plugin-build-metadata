@@ -5,6 +5,10 @@
         "module": "esnext",
         "moduleResolution": "node",
         "resolveJsonModule": true,
+        "types": [
+            "node",
+            "vite"
+        ],
         "strict": true,
         "strictNullChecks": true,
         "esModuleInterop": true,
